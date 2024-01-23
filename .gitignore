@@ -260,3 +260,4 @@ paket-files/
 
 # CodeRush
 .cr/
+/.vs/VSWorkspaceState.json
