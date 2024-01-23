@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `npm i` to download all the nesessary packages.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 Run `npm run server` for a dev backend server. Navigate to `http://localhost:3000/`. The server will automatically reload if you change any of the source files.
+Uncomment lines from `58th to 76th` in `app.js` for the `CORS` to be enabled for the backend.
 
 ## Code scaffolding
 
