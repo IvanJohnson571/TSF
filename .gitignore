@@ -4,6 +4,8 @@
 /dist
 /tmp
 /out-tsc
+/Angular
+/.vs
 # Only exists if Bazel was run
 /bazel-out
 
@@ -11,8 +13,8 @@
 /node_modules
 
 # profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
+chrome-profiler-events.json
+speed-measure-plugin.json
 
 # IDEs and editors
 /.idea
@@ -22,6 +24,8 @@ speed-measure-plugin*.json
 *.launch
 .settings/
 *.sublime-workspace
+
+# Miscellaneous
 
 # IDE - VSCode
 .vscode/*
@@ -45,3 +49,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/.vs/slnx.sqlite
