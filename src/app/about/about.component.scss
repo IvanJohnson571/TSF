@@ -1,0 +1,159 @@
+:host {
+
+  h1 {
+    font-family: 'Azbuki-Regular' !important;
+  }
+
+  p {
+    font-family: 'Azbuki-Regular';
+    font-size: 24px;
+  }
+
+  .elementor-widget-wrap {
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .elementor-element-populated {
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #F0EFEF;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    --e-column-margin-right: 10px;
+    --e-column-margin-left: 10px;
+    margin-top: -1px;
+    margin-left: -1px;
+    transform: scale(1.01);
+  }
+
+  .write-us {
+    font-family: 'Azbuki-Regular' !important;
+    font-size: 2.4rem;
+    font-weight: 900;
+  }
+
+  .elementor-widget-container {
+    margin: 0px 0px 0px 0px;
+  }
+
+  .elementor-507 {
+    //background-image: url('http://localhost:3000/images/icons/dot.png');
+    background-repeat: repeat;
+  }
+
+  .hero {
+    height: 62vh;
+    width: 100%;
+    position: relative;
+  }
+
+  .hero--image {
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-bottom: 0;
+  }
+
+  .hero--copy {
+    width: 100%;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 85%;
+    text-align: center;
+    color: #fff;
+    max-width: 90%;
+  }
+
+  .all-begins {
+    background-color: black;
+    opacity: 0.5;
+    width: fit-content;
+    border-radius: 50px;
+    padding: 1rem;
+  }
+
+  .remove-image {
+    cursor: pointer;
+    color: #f15d16;
+  }
+}
+
+.gallery-wrapper {
+  text-align: center;
+  margin-top: 25px;
+
+  .ngx-gallery {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+}
+
+.desktop-gallery {
+  ngx-gallery {
+    height: 400px !important;
+  }
+}
+
+.mobile-gallery {
+  ngx-gallery {
+    height: 280px !important;
+  }
+}
+
+.center-paragraph {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+.image-preview {
+  height: 7rem;
+  margin-bottom: 1em;
+}
+
+.image-preview img {
+  height: 100%;
+}
+
+.save-button {
+  font-family: 'Azbuki-Regular' !important;
+  font-size: 20px;
+  width: fit-content;
+}
+
+.image-preview-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 0.5em;
+}
+
+.text-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+  margin-left: 1rem;
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .update-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1em;
+  }
+}

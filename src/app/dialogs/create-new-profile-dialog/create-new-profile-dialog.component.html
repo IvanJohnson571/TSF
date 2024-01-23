@@ -1,0 +1,61 @@
+<section>
+  <div>
+    <div style="display: flex; justify-content: end;">
+      <button mat-stroked-button class="close-button" (click)="dialogRef.close()"
+              style="border: none;">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18" stroke="#222222" stroke-linecap="square" stroke-linejoin="round" />
+          <path d="M6 6L18 18" stroke="#222222" stroke-linecap="square" stroke-linejoin="round" />
+        </svg>
+
+      </button>
+    </div>
+    <div style="padding-bottom: 30px;">
+
+      <div style="padding-left: 10px; padding-right: 10px;" class="elementor-widget-container2">
+
+        <form [formGroup]="formGroup" autocomplete="off" (ngSubmit)="CreateUser()">
+          <div style="display: flex; flex-direction: column;">
+            <div style="width: 100%; display: flex; flex-direction: row;">
+              <mat-form-field style="width: 100%; margin-right: 1.2rem;">
+                <mat-label>{{captions.captionServiceList['Name']}}</mat-label>
+                <input type="text" matInput formControlName="username">
+              </mat-form-field>
+            </div>
+
+            <mat-form-field style="margin-right: 1.2rem;">
+              <mat-label>{{captions.captionServiceList['Password']}}</mat-label>
+              <input matInput formControlName="password"
+                     [type]="passVisibility ? 'text' : 'password'">
+              <mat-icon *ngIf="!passVisibility" (click)="switchVisibility();" style="width: 25px; cursor: pointer;">visibility</mat-icon>
+              <mat-icon *ngIf="passVisibility" (click)="switchVisibility();" style="width: 25px; cursor: pointer;">visibility_off</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field style="margin-right: 1.2rem;">
+              <mat-label>{{captions.captionServiceList['RepeatPassword']}}</mat-label>
+              <input [type]="passRepeatVisibility ? 'text' : 'password'" matInput formControlName="repeat_password">
+              <mat-icon *ngIf="!passRepeatVisibility" (click)="switchRepeatVisibility();" style="width: 25px; cursor: pointer;">visibility</mat-icon>
+              <mat-icon *ngIf="passRepeatVisibility" (click)="switchRepeatVisibility();" style="width: 25px; cursor: pointer;">visibility_off</mat-icon>
+            </mat-form-field>
+
+            <mat-hint *ngIf="formGroup.value.password != formGroup.value.repeat_password" style="color: red; margin-bottom: 2em;">{{captions.captionServiceList['PasswordDoesntMatch']}}</mat-hint>
+
+            <!-- <div>
+      <ng-hcaptcha formControlName="captcha" data-size="compact"></ng-hcaptcha>
+  </div> -->
+
+            <div class="button-wrapper" data-size="compact">
+              <button mat-stroked-button type="button" type="submit">
+                {{captions.captionServiceList['Create']}}
+              </button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</section>

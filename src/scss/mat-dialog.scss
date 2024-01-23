@@ -1,0 +1,435 @@
+@import "./colors.scss";
+
+.mat-mdc-dialog-container {
+  /*#region mat-dialog-container override - this style is taken from eDynamixPortal and must match in all modules*/
+  padding: 15px !important;
+  overflow: hidden !important;
+  border-radius: 4px;
+
+  .custom-dialog-title {
+    display: flex;
+    justify-content: space-between;
+
+    .mat-dialog-title {
+      font: inherit !important;
+      color: $icon-color;
+      margin-left: 5px;
+    }
+
+    .mat-mdc-dialog-title {
+      font: inherit !important;
+      color: $icon-color;
+      margin-left: 5px;
+    }
+
+    .mat-mdc-button {
+      margin: -10px -10px 0px 0px;
+      height: 35px;
+      width: 35px;
+      min-width: 0;
+      line-height: 20px;
+      padding: 5px;
+      border-radius: 50%;
+
+      .mat-icon {
+        width: 20px;
+        height: 20px;
+
+        svg {
+          color: #616c7e;
+        }
+      }
+    }
+  }
+
+  .mat-dialog-content {
+    margin: 0;
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .mat-mdc-dialog-content {
+    margin: 0;
+    padding: 5px !important;
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .mat-dialog-actions {
+    margin-bottom: -8px;
+  }
+  /*#endregion mat-dialog-container override - this style is taken from eDynamixPortal and must match in all modules*/
+  .dialog {
+    margin: -15px !important;
+
+    .mat-dialog-content {
+      min-height: 90px;
+      font-size: 12px;
+      padding: 10px !important;
+      margin: 0 !important;
+      text-align: center;
+
+      .mat-dialog-actions {
+        margin-left: 15px;
+        margin-right: 5px;
+        min-height: 0 !important;
+        padding: 0 !important;
+
+
+        button {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .mat-mdc-dialog-content {
+      min-height: 90px;
+      font-size: 12px;
+      padding: 10px !important;
+      margin: 0 !important;
+      text-align: center;
+
+      .mat-mdc-dialog-actions {
+        margin-left: 15px;
+        margin-right: 5px;
+        min-height: 0 !important;
+        padding: 0 !important;
+
+
+        button {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .mat-dialog-title {
+      margin: 0 !important;
+      display: block;
+      padding: 0 0 0 10px;
+      font-size: 12px;
+      color: $icon-color;
+      height: 35px;
+    }
+
+    .mat-mdc-dialog-title {
+      margin: 0 !important;
+      display: block;
+      padding: 0 0 0 10px;
+      font-size: 12px;
+      color: $icon-color;
+      height: 35px;
+    }
+
+    .close-button {
+      margin-top: 6px;
+      margin-right: 3px;
+      float: right;
+      border: none;
+      background: none;
+      outline: none;
+
+      .mat-button-wrapper {
+        .mat-icon {
+          width: 22px;
+          height: 22px;
+          color: $edy-gray-5;
+        }
+      }
+    }
+
+    .close-button:focus {
+      outline: none;
+    }
+  }
+
+  .confirm-dialog {
+    margin: -15px !important;
+    width: 400px;
+    height: 100%;
+    background-color: white;
+
+    .mat-dialog-title {
+      font-size: 16px !important;
+      margin: 0 !important;
+      display: block !important;
+      padding: 5px 5px 0 15px !important;
+      color: #616c7e !important;
+      height: 35px !important;
+      font-weight: 400;
+    }
+
+    .mat-mdc-dialog-title {
+      font-size: 16px !important;
+      margin: 0 !important;
+      display: block !important;
+      padding: 5px 5px 0 15px !important;
+      color: #616c7e !important;
+      height: 35px !important;
+      font-weight: 400;
+    }
+
+    .mat-dialog-content {
+      padding: 15px !important;
+      padding-top: 0 !important;
+      margin: 0 !important;
+      min-height: 72px;
+      text-align: unset !important;
+      font-weight: 400;
+
+      .mat-mdc-form-field {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 12px !important;
+
+        .mat-mdc-text-field-wrapper {
+
+          .mat-mdc-form-field-flex {
+            width: 180px !important;
+          }
+        }
+
+        .mat-mdc-form-field-subscript-wrapper {
+          margin-top: 3px;
+        }
+      }
+
+      .mat-dialog-actions {
+        min-height: 0 !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        float: right !important;
+
+        button {
+          margin: 0 !important;
+        }
+
+        button:last-of-type {
+          margin-left: 15px !important;
+        }
+      }
+
+      .button.blue {
+        margin-right: 15px !important;
+      }
+
+      p {
+        margin-top: 0 !important;
+        margin-bottom: 20px !important;
+        font-size: 12px !important;
+      }
+    }
+
+    .mat-mdc-dialog-content {
+      padding: 15px !important;
+      padding-top: 0 !important;
+      margin: 0 !important;
+      min-height: 72px;
+      text-align: unset !important;
+      font-weight: 400;
+      max-height: none;
+
+      .mat-mdc-form-field {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 12px !important;
+
+        .mat-mdc-text-field-wrapper {
+
+          .mat-mdc-form-field-flex {
+            width: 180px !important;
+          }
+        }
+
+        .mat-mdc-form-field-subscript-wrapper {
+          margin-top: 3px;
+        }
+      }
+
+      .mat-mdc-dialog-actions {
+        min-height: 0 !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        float: right !important;
+
+        button {
+          margin: 0 !important;
+        }
+
+        button:last-of-type {
+          margin-left: 15px !important;
+        }
+      }
+
+      .button.blue {
+        margin-right: 15px !important;
+      }
+
+      p {
+        margin-top: 0 !important;
+        margin-bottom: 20px !important;
+        font-size: 12px !important;
+      }
+    }
+
+    .close-button {
+      margin-right: 1px;
+      float: right;
+      border: none;
+      background: 0 0;
+      outline: 0;
+      height: 30px !important;
+      min-width: 30px !important;
+      border-radius: 50%;
+      padding: 0 !important;
+      line-height: 0 !important;
+
+      .mat-button-wrapper {
+        .mat-icon {
+          width: 22px;
+          height: 22px;
+          color: $edy-gray-5;
+        }
+      }
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+
+    .close-button:focus {
+      outline: none;
+    }
+  }
+
+  .confirm-dialog.wip {
+    width: 1000px;
+    background-color: $background;
+
+    .mat-dialog-content {
+      max-height: none;
+    }
+  }
+
+  .mdc-dialog__content {
+    font-family: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+  }
+
+  .mdc-dialog__title {
+    font-family: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+  }
+}
+
+// NEW MDC STYLE!!! -----------------------------------------------------
+
+.cdk-visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  left: 0;
+}
+
+.cdk-overlay-pane {
+  position: absolute !important;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  max-width: unset !important;
+  max-height: 100%;
+}
+
+.cdk-global-overlay-wrapper {
+  display: flex;
+  position: absolute;
+  z-index: 1000;
+}
+
+.cdk-overlay-container, .cdk-global-overlay-wrapper {
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 1;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(0,0,0,.32);
+}
+
+.cdk-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity .4s cubic-bezier(.25,.8,.25,1);
+}
+
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 1000;
+}
+
+.cdk-global-overlay-wrapper {
+  pointer-events: auto;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+.mdc-dialog__surface {
+  /* position: relative; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* flex-grow: 0; */
+  /* flex-shrink: 0; */
+  /* box-sizing: border-box; */
+  /* max-width: 100%; */
+  /* max-height: 100%; */
+  pointer-events: auto;
+  overflow-y: visible;
+  font-family: Nunito Sans,sans-serif;
+  //background-color: white !important;
+}
+
+.mdc-dialog__title::before {
+  display: contents;
+}
+
+.mdc-dialog .mdc-dialog__surface {
+  overflow-y: visible;
+}

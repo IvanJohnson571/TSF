@@ -1,0 +1,181 @@
+<section *ngIf="!isLoading" class="halls-wrapper">
+  <div [ngClass]="{'desktop': scrWidth >= 1200, 'mobile' : scrWidth < 1200}">
+    <div *ngIf="hallOne" style="background-color: #EDF1FC; width: 100%;">
+      <div style="padding-left: 1rem; padding-top: 1rem; display: flex; justify-content: center;">
+        <h4 class="write-us" style="color: #950E1C">{{captions.captionServiceList['HallOne']}}</h4>
+      </div>
+
+      <div class="gallery-wrapper"
+           [ngClass]="{'desktop-gallery': scrWidth >= 1200, 'mobile-gallery' : scrWidth < 1200}">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+      </div>
+
+      <div *ngIf="isAuthenticated" class="image-preview-wrapper">
+
+        <div *ngFor="let image of galleryImages" style="margin-right: 1em; margin-bottom: 1em; display: flex; ">
+
+          <img src="{{image.small}}" alt="Alternate Text" style="width: 8em; height: 8em;" />
+
+          <div style="position: relative; right: 25px;">
+            <mat-icon *ngIf="isAuthenticated"
+                      class="remove-image"
+                      matTooltip="{{captions.captionServiceList['DeletePhoto']}}"
+                      (click)="removeImage(image, 'deleteImageHallOne');">
+              cancel
+            </mat-icon>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div *ngIf="isAuthenticated" style="display: flex; flex-direction: column; align-items: center;">
+        <div>
+          <button mat-stroked-button type="button" (click)="filePicker.click()" class="submit-button"
+                  style="font-family: 'Azbuki-Regular' !important; font-size: 20px; margin-left: 0.5em; margin-right: -13.5em;">
+            {{captions.captionServiceList['UploadNewPhoto']}}
+          </button>
+          <input type="file" #filePicker (change)="onImagePicked($event)">
+        </div>
+        <div class="image-preview" *ngIf="imagePreviewHallOne !== '' && imagePreviewHallOne && formHallOne.get('image').valid">
+          <img [src]="imagePreviewHallOne" [alt]="formHallOne.value.title">
+        </div>
+        <div>
+          <button *ngIf="imagePreviewHallOne !== '' && imagePreviewHallOne && formHallOne.get('image').valid"
+                  mat-raised-button
+                  class="submit-button save-button"
+                  (click)="onSaveImage('HallOne');">
+            {{captions.captionServiceList['Add']}}
+          </button>
+          <button *ngIf="imagePreviewHallOne !== '' && imagePreviewHallOne && formHallOne.get('image').valid"
+                  mat-raised-button
+                  class="submit-button save-button"
+                  style="margin-left: 1em; background-color: lightgray !important"
+                  (click)="cancel('hallOne');">
+            {{captions.captionServiceList['Reject']}}
+          </button>
+        </div>
+      </div>
+
+      <div class="description">{{captions.captionServiceList['Description']}}:</div>
+
+      <div style="padding-left: 1rem; text-align: justify; padding-right: 1rem; flex-direction: column; display: flex;">
+
+        <span *ngIf="!updateFirstHallText" class="text">{{firstHallDescriptionText}}</span>
+
+        <textarea *ngIf="updateFirstHallText"
+                  style="width: 90%; font-size: 14px;" [formControl]="firstHall_Description">
+        </textarea>
+        <mat-hint *ngIf="isAuthenticated && updateFirstHallText" align="start"
+                  style="font-size: 12px; color: #CD5C5C !important; margin-top: 0.5em;">*{{captions.captionServiceList['ChangeTextWarning']}}</mat-hint>
+
+        <div *ngIf="isAuthenticated && !updateFirstHallText" class="flex-center"
+             style="margin-top: 1em;">
+          <mat-button mat-stroked-button (click)="allowUpdateHallOneText(firstHallDescriptionText)"
+                      class="panel-change">{{captions.captionServiceList['Change']}}</mat-button>
+        </div>
+
+        <div *ngIf="isAuthenticated && updateFirstHallText" class="update-wrap">
+          <div class="display-flex">
+            <mat-button mat-stroked-button (click)="updateFirstHallText = false"
+                        class="panel-gray">{{captions.captionServiceList['Reject']}}</mat-button>
+          </div>
+          <div class="display-flex" style="margin-left: 1em;">
+            <mat-button mat-stroked-button (click)="saveHallOneDesc();"
+                        class="panel-change">{{captions.captionServiceList['Save']}}</mat-button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div *ngIf="hallTwo" style="background-color: #EDF1FC; width: 100%;">
+      <div style="padding-left: 1rem; padding-top: 1rem; display: flex; justify-content: center;">
+        <h4 class="write-us" style="color: #950E1C">{{captions.captionServiceList['HallTwo']}}</h4>
+      </div>
+      <!-------------------------------------------------------------------------->
+      <div class="gallery-wrapper">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImagesTwo" class="ngx-gallery"></ngx-gallery>
+      </div>
+
+      <div *ngIf="isAuthenticated" class="image-preview-wrapper">
+
+        <div *ngFor="let image of galleryImagesTwo" style="margin-right: 1em; margin-bottom: 1em; display: flex; ">
+
+          <img src="{{image.small}}" alt="Alternate Text" style="width: 8em; height: 8em;" />
+
+          <div style="position: relative; right: 25px;">
+            <mat-icon *ngIf="isAuthenticated"
+                      class="remove-image"
+                      matTooltip="{{captions.captionServiceList['DeletePhoto']}}"
+                      (click)="removeImage(image, 'deleteImageHallTwo');">
+              cancel
+            </mat-icon>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div *ngIf="isAuthenticated" style="display: flex; flex-direction: column; align-items: center;">
+        <div>
+          <button mat-stroked-button type="button" (click)="filePicker.click()" class="submit-button"
+                  style="font-family: 'Azbuki-Regular' !important; font-size: 20px; margin-left: 0.5em; margin-right: -13.5em;">
+            {{captions.captionServiceList['UploadNewPhoto']}}
+          </button>
+          <input type="file" #filePicker (change)="onImagePickedHallTwo($event)">
+        </div>
+        <div class="image-preview" *ngIf="imagePreviewHallTwo !== '' && imagePreviewHallTwo && formHallTwo.get('image').valid">
+          <img [src]="imagePreviewHallTwo" [alt]="formHallTwo.value.title">
+        </div>
+        <div>
+          <button *ngIf="imagePreviewHallTwo !== '' && imagePreviewHallTwo && formHallTwo.get('image').valid"
+                  mat-raised-button
+                  class="submit-button save-button"
+                  (click)="onSaveImage('HallTwo');">
+            {{captions.captionServiceList['Add']}}
+          </button>
+          <button *ngIf="imagePreviewHallTwo !== '' && imagePreviewHallTwo && formHallTwo.get('image').valid"
+                  mat-raised-button
+                  class="submit-button save-button"
+                  style="margin-left: 1em; background-color: lightgray !important"
+                  (click)="cancel('hallTwo');">
+            {{captions.captionServiceList['Reject']}}
+          </button>
+        </div>
+      </div>
+      <!-------------------------------------------------------------------------->
+
+      <div class="description">{{captions.captionServiceList['Description']}}:</div>
+      <div style="padding-left: 1rem; text-align: justify; padding-right: 1rem; display: flex; flex-direction: column;">
+
+        <span *ngIf="!updateSecondHallText" class="text">{{secondHallDescriptionText}}</span>
+
+        <textarea *ngIf="updateSecondHallText"
+                  style="width: 90%; font-size: 14px;" [formControl]="secondHall_Description">
+        </textarea>
+        <mat-hint *ngIf="isAuthenticated && updateSecondHallText" align="start"
+                  style="font-size: 12px; color: #CD5C5C !important; margin-top: 0.5em;">*{{captions.captionServiceList['ChangeTextWarning']}}</mat-hint>
+
+        <div *ngIf="isAuthenticated && !updateSecondHallText" class="flex-center"
+             style="margin-top: 1em;">
+          <mat-button mat-stroked-button (click)="allowUpdateHallTwoText(secondHallDescriptionText)"
+                      class="panel-change">{{captions.captionServiceList['Change']}}</mat-button>
+        </div>
+
+        <div *ngIf="isAuthenticated && updateSecondHallText" class="update-wrap"
+             style="margin-bottom: 1em;">
+          <div class="display-flex">
+            <mat-button mat-stroked-button (click)="updateSecondHallText = false"
+                        class="panel-gray">{{captions.captionServiceList['Reject']}}</mat-button>
+          </div>
+          <div class="display-flex" style="margin-left: 1em;">
+            <mat-button mat-stroked-button (click)="saveHallTwoDesc();"
+                        class="panel-change">{{captions.captionServiceList['Save']}}</mat-button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

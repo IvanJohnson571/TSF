@@ -1,0 +1,35 @@
+<section class="root-section" [style.height.px]="scrHeight"
+style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.94)), transparent url({{urlMic}}) center center/cover no-repeat scroll;">
+  <div style="height: 100%;">
+    <div class="flags-wrapper">
+      <span (click)="switchLanguages('BG');" style="cursor: pointer;">
+        <img style="width: 22px; height: 22px;"
+        src='{{bgFlag}}' alt="logo" />
+      </span>
+      <span (click)="switchLanguages('EN');" style="margin-left: 7px; cursor: pointer;">
+        <img style="width: 22px; height: 22px;"
+        src='{{enFlag}}' alt="logo" />
+      </span>
+    </div>
+    <div style="color: white; font-size: 2.5rem; font-weight: 800; padding-left: 15px; font-family: 'Azbuki-Regular'; height: 60%;">Tobacco Sound Factory</div>
+  </div>
+</section>
+<section *ngIf="!isLoading">
+  <div style="display: flex; justify-content: center;">
+    <h2 style="color: #950e1c; font-weight: 900; margin-bottom: 2rem;">{{captions.captionServiceList['OurServices']}}</h2>
+  </div>
+  <div class="section-wrapper"
+       [ngClass]="{'desktop-row': scrWidth >= 1200, 'mobile-column' : scrWidth < 1200}">
+    <ng-container *ngFor="let el of rootServicesList">
+      <div class="element" [ngClass]="{'width-25-mr-2': scrWidth >= 1200}">
+        <div style="position: relative; z-index: 2; line-height: 0;">
+          <div style="height: 80px; width: 80px; display: inline-block; margin-bottom: 13px; transition: all .4s ease;">
+            <img class="img-class" src='{{url + secondpath + el.url}}' alt="{{el.name}}" />
+          </div>
+        </div>
+        <h3 *ngIf="commonService.languageSwitch.value == 'BG'">{{el.name}}</h3>
+        <h3 *ngIf="commonService.languageSwitch.value == 'EN'">{{el.nameEN}}</h3>
+      </div>
+    </ng-container>
+  </div>
+</section>

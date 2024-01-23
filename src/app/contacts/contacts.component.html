@@ -1,0 +1,304 @@
+<ng-container *ngIf="!isLoading">
+<section  class="elementor-section" style="padding: 100px 0px 0px 0px; position: relative;">
+  <div class="elementor-container">
+    <div class="elementor-column" style="width: 100%;">
+      <div style="padding: 10px; display: flex;" class="elementor-widget-wrap">
+        <section style="border-radius: 40px 40px 0px 0px; width: 100%; position: relative;">
+          <div style="max-width: 1140px;"
+               class="elementor-container"
+               [ngClass]="{'desktop': scrWidth >= 1200, 'mobile' : scrWidth < 1200}">
+            <div [ngClass]="{'width-33': scrWidth >= 1200, 'width-100' : scrWidth < 1200}"
+                 class="elementor-column">
+              <div class="elementor-widget-wrap elementor-element-populated">
+                <div style="--icon-box-icon-margin: 23px; width: 100%;">
+                  <div class="elementor-widget-container">
+
+                    <div class="elementor-icon-box-wrapper" style="display: flex;">
+
+                      <div class="elementor-icon-box-icon" style="flex: 0 0 auto;">
+                        <span class="icon-wrapper" (click)="navigateGoogleMaps();">
+                          <mat-icon class="scale">location_on</mat-icon>
+                        </span>
+                      </div>
+                      <div class="elementor-icon-box-content">
+
+                        <h3 class="elementor-icon-box-title">
+                          <span>{{captions.captionServiceList['Location']}}</span>
+                        </h3>
+                        <p *ngIf="!updateMode" style="color: #4D4D4D; margin-bottom: 3px;">{{address}}</p>
+                        <mat-form-field *ngIf="updateMode"
+                                        style="width: 100%;">
+                          <input matInput
+                                 [formControl]="location_data">
+                          <!--<mat-hint align="start">*{{captions.captionServiceList['ChangeTextWarning']}}</mat-hint>-->
+                        </mat-form-field>
+
+                      </div>
+
+                    </div>
+
+                    <div *ngIf="isAuthenticated && !updateMode" class="panel-change-wrapper">
+                      <mat-button mat-stroked-button (click)="changeLocation(address);"
+                                  class="panel-change">{{captions.captionServiceList['Change']}}</mat-button>
+                    </div>
+
+                    <div *ngIf="isAuthenticated && updateMode"
+                         style="display: flex; flex-direction: row;">
+
+                      <div class="display-flex">
+                        <mat-button mat-stroked-button (click)="closeUpdate();"
+                                    class="panel-gray">{{captions.captionServiceList['Reject']}}</mat-button>
+                      </div>
+
+                      <div class="display-flex" style="margin-left: 1em;">
+                        <mat-button mat-stroked-button (click)="save(captions.captionServiceList['Location']);"
+                                    class="panel-change">{{captions.captionServiceList['Save']}}</mat-button>
+                      </div>
+
+                    </div>
+
+                    <mat-hint *ngIf="isAuthenticated && updateMode" align="start"
+                              style="font-size: 12px; color: #CD5C5C !important;">*{{captions.captionServiceList['ChangeTextWarning']}}</mat-hint>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div [ngClass]="{'width-33': scrWidth >= 1200, 'width-100' : scrWidth < 1200}"
+                 class="elementor-column">
+              <div class="elementor-widget-wrap elementor-element-populated">
+                <div style="--icon-box-icon-margin: 23px; width: 100%;">
+                  <div class="elementor-widget-container">
+                    <div class="elementor-icon-box-wrapper" style="display: flex;">
+                      <div class="elementor-icon-box-icon" style="flex: 0 0 auto;">
+                        <span class="icon-wrapper">
+                          <mat-icon class="scale">phone_in_talk</mat-icon>
+                        </span>
+                      </div>
+                      <div class="elementor-icon-box-content">
+                        <h3 class="elementor-icon-box-title">
+                          <span>{{captions.captionServiceList['Telephone']}}</span>
+                        </h3>
+                        <p *ngIf="!updatePhone" style="color: #4D4D4D;">{{contactPhone}}</p>
+                        <mat-form-field *ngIf="updatePhone"
+                        style="width: 100%;">
+                        <input matInput
+                        [formControl]="phone_data">
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                    <div *ngIf="isAuthenticated && !updatePhone" class="panel-change-wrapper">
+                      <mat-button mat-stroked-button (click)="changePhone(contactPhone);" 
+                                  class="panel-change">{{captions.captionServiceList['Change']}}</mat-button>
+                    </div>
+
+                    <div *ngIf="isAuthenticated && updatePhone"
+                      style="display: flex; flex-direction: row;">
+
+                      <div class="display-flex">
+                        <mat-button mat-stroked-button (click)="closeUpdatePhone();" 
+                                    class="panel-gray">{{captions.captionServiceList['Reject']}}</mat-button>
+                      </div>
+  
+                      <div class="display-flex" style="margin-left: 1em;">
+                        <mat-button mat-stroked-button (click)="save(captions.captionServiceList['Telephone']);" 
+                                    class="panel-change">{{captions.captionServiceList['Save']}}</mat-button>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div [ngClass]="{'width-33': scrWidth >= 1200, 'width-100' : scrWidth < 1200}"
+                 class="elementor-column">
+              <div class="elementor-widget-wrap elementor-element-populated">
+                <div style="--icon-box-icon-margin: 23px; width: 100%;">
+                  <div class="elementor-widget-container">
+                    <div class="elementor-icon-box-wrapper" style="display: flex;">
+                      <div class="elementor-icon-box-icon" style="display: inline-flex; flex: 0 0 auto;">
+                        <span class="icon-wrapper" 
+                              style="height: 58px;">
+                          <mat-icon class="scale">mail</mat-icon>
+                        </span>
+                      </div>
+                      <div class="elementor-icon-box-content">
+                        <h3 class="elementor-icon-box-title">
+                          <span>{{captions.captionServiceList['Email']}}</span>
+                        </h3>
+                        <p *ngIf="!updateMail" style="color: #4D4D4D;">{{mailContact}}</p>
+                        <mat-form-field *ngIf="updateMail"
+                        style="width: 100%;">
+                        <input matInput
+                        [formControl]="mail_data">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div *ngIf="isAuthenticated && !updateMail" class="panel-change-wrapper">
+                      <mat-button mat-stroked-button (click)="changeEmail(mailContact);" 
+                                  class="panel-change">{{captions.captionServiceList['Change']}}</mat-button>
+                    </div>
+
+                    <div *ngIf="isAuthenticated && updateMail"
+                      style="display: flex; flex-direction: row;">
+
+                      <div class="display-flex">
+                        <mat-button mat-stroked-button (click)="closeUpdateMail();" 
+                                    class="panel-gray">{{captions.captionServiceList['Reject']}}</mat-button>
+                      </div>
+  
+                      <div class="display-flex" style="margin-left: 1em;">
+                        <mat-button mat-stroked-button (click)="save(captions.captionServiceList['Email']);" 
+                                    class="panel-change">{{captions.captionServiceList['Save']}}</mat-button>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="padding: 25px 0px 25px 0px;">
+  <div class="elementor-container" [ngClass]="{'desktop': scrWidth >= 1200, 'mobile' : scrWidth < 1200}">
+    <div [ngClass]="{'width-50': scrWidth >= 1200, 'width-100' : scrWidth < 1200}" class="elementor-column fadeInLeft animated">
+      <div class="elementor-widget-wrap elementor-element-populated">
+        <div style="width: 100%; margin-bottom: 20px;">
+          <div>
+            <h2 class="write-us" style="color: #950E1C">{{captions.captionServiceList['SendUsYourQuery']}}</h2>
+          </div>
+        </div>
+        <div style="margin-bottom: 20px; width: 100%;">
+          <div class="elementor-widget-container">
+            <p *ngIf="isAuthenticated && !updateContactTextandMapData">
+              {{contactText}}
+            </p>
+            <textarea *ngIf="isAuthenticated && updateContactTextandMapData"
+            style="width: 100%; min-height: 120px;" [formControl]="queryFormControl"></textarea>
+            <p *ngIf="isAuthenticated && updateContactTextandMapData"
+              style="color: #CD5C5C !important;"
+              align="start">*{{captions.captionServiceList['ChangeTextWarning']}}
+            </p>
+          </div>
+        </div>
+        <div style="width: 100%;">
+          <div class="elementor-507"
+          style="background-image: url({{dotsImage}});">
+            <div style="--spacer-size: 100px; --widgets-spacing: 20px;">
+              <div style="height: 100px;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div [ngClass]="{'width-50': scrWidth >= 1200, 'width-100' : scrWidth < 1200}" class="google_map_container">
+      <google-map height="350px" width="100%" [zoom]="mapZoom" [center]="mapOptions.center" [options]="mapOptions">
+        <map-marker
+          [position]="mapOptions.center"
+          [options]="markerOptions"
+          (mapClick)="openInfoWindow(marker)">
+        </map-marker>
+        <map-info-window>{{ markerInfoContent }}</map-info-window>
+      </google-map>
+    </div>
+  </div>
+  <div *ngIf="isAuthenticated && !updateContactTextandMapData" class="panel-change-wrapper">
+    <mat-button mat-stroked-button (click)="changeMapLocation(contactText);" 
+                class="panel-change"
+                style="margin-left: 1em;">{{captions.captionServiceList['Change']}}</mat-button>
+  </div>
+
+  <div *ngIf="isAuthenticated && updateContactTextandMapData"
+        style="display: flex; flex-direction: column; padding-top: 15px;">
+
+        <div style="width: 75%; margin-left: 1em; display: flex; flex-direction: row; margin-bottom: 1em;">
+
+          <div style="display: flex; flex-direction: column; padding-right: 1em; background-color: lightyellow; padding-left: 8px;
+          padding-top: 2px; border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;">
+            <p style="margin-bottom: 28px; padding-top: 1em;">{{captions.captionServiceList['Latitude']}}:</p>
+            <p>{{captions.captionServiceList['Longitude']}}:</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; background-color: lightyellow; padding-right: 8px; border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;">
+            
+            <mat-form-field style="width: 100%; padding-top: 1em;">
+              <input matInput
+              [formControl]="latitude_form">
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%;">
+              <input matInput
+              [formControl]="longitude_form">
+            </mat-form-field>
+
+          </div>
+                    
+        </div>
+
+        <div style="display: flex; flex-direction: row;">
+          <div class="display-flex" style="margin-left: 1em;">
+            <mat-button mat-stroked-button (click)="closeUpdateQueryandMap();" 
+                                      class="panel-gray">{{captions.captionServiceList['Reject']}}</mat-button>
+          </div>
+    
+          <div class="display-flex" style="margin-left: 1em;">
+            <mat-button mat-stroked-button (click)="save(textMap);" 
+                                      class="panel-change">{{captions.captionServiceList['Save']}}</mat-button>
+          </div>
+        </div>
+        
+
+  </div>
+
+</section>
+<section class="fadeInRight animated elementor-column last-section">
+  <div class="elementor-element elementor-element-4fc6da2 elementor-button-align-stretch elementor-widget elementor-widget-form"
+       [ngClass]="{'width-50': scrWidth >= 1200, 'width-90' : scrWidth < 1200}">
+    <div class="elementor-widget-container2">
+      <form [formGroup]="formGroup" autocomplete="off" (ngSubmit)="sendEmail()">
+        <div style="display: flex; flex-direction: column;">
+          <div style="width: 100%; display: flex; flex-direction: row;"
+               [ngClass]="{'desktop': scrWidth >= 1200, 'mobile' : scrWidth < 1200}">
+            <mat-form-field style="width: 100%; margin-right: 1.2rem;">
+              <mat-label>{{captions.captionServiceList['Name']}}</mat-label>
+              <input type="text" matInput formControlName="name">
+            </mat-form-field>
+          </div>
+          <mat-form-field>
+            <mat-label>{{captions.captionServiceList['Email']}}</mat-label>
+            <input type="email" matInput formControlName="email">
+          </mat-form-field>
+          <mat-form-field style="width: 100%; margin-right: 1.2rem;">
+            <mat-label>{{captions.captionServiceList['Telephone']}}</mat-label>
+            <input type="text" matInput formControlName="phone">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>{{captions.captionServiceList['Subject']}}</mat-label>
+            <input matInput formControlName="subject">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>{{captions.captionServiceList['Message']}}</mat-label>
+            <textarea formControlName="message" matInput cdkTextareaAutosize cdkAutosizeMinRows="3"
+                      cdkAutosizeMaxRows="6"></textarea>
+          </mat-form-field>
+          <ng-hcaptcha formControlName="captcha"></ng-hcaptcha>
+          <div>
+            <button [disabled]="!formGroup.valid" class="submit-button" mat-stroked-button type="submit"
+                    style="font-family: 'Azbuki-Regular' !important; font-size: 20px;">{{captions.captionServiceList['Send']}}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</ng-container>

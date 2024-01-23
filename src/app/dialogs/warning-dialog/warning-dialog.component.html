@@ -1,0 +1,22 @@
+<section>
+  <div>
+    <div style="display: flex; justify-content: end;">
+    </div>
+    <div style="padding-bottom: 30px;">
+      <div style="padding-left: 10px; padding-right: 10px; display: flex; align-items: center; flex-direction: column; justify-content: center;"
+           class="elementor-widget-container2">
+        <h4 style="margin: 1em; text-align: center; ">{{captions.captionServiceList['AreYouSure']}} {{imageName}}</h4>
+        <div class="button-wrapper" data-size="compact">
+          <button mat-stroked-button type="button" (click)="deleteImage();">{{captions.captionServiceList['Yes']}}</button>
+          <div class="button-wrapper" data-size="compact">
+            <button mat-stroked-button type="button"
+                    style="background-color: lightgray; margin-left: 1em;"
+                    (click)="dialogRef.close()">
+              {{captions.captionServiceList['No']}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

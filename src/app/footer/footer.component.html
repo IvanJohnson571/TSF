@@ -1,0 +1,38 @@
+<section *ngIf="!isLoading" class="section-wrapper">
+  <div class="flex-column" style="position: relative;">
+    <h3 *ngIf="captions.captionServiceList" class="white">{{captions.captionServiceList['FollowUs']}} : </h3>
+    <div (click)="goToFB()" class="clickable">
+      <app-facebook></app-facebook>
+    </div>
+  </div>
+  <div *ngIf="captions.captionServiceList" class="right-reserved" 
+        [ngClass]="{'row': scrWidth >= 600, 'column' : scrWidth < 600}"
+        >
+    
+    <div class="left-side-data"
+        [ngClass]="{'width-50': scrWidth >= 600, 'width-100' : scrWidth < 600}">
+
+      <span class="white" style="padding-bottom: 0.5rem; width: 100%;">© {{currentYear}} Tobacco Sound Factory. {{captions.captionServiceList['AllRightsReserved']}}.</span>
+      <span (click)="goToDeveloperPage();" 
+          class="white developer" 
+          matTooltip="{{captions.captionServiceList['ViewDeveloperPage']}}"
+        >{{captions.captionServiceList['DesignAndDevelopment']}}: {{captions.captionServiceList['IvanAI']}}</span>
+      
+    </div>
+
+    <div *ngIf="!isAuthenticated"  [ngClass]="{'width-50 right-side-data-big': scrWidth >= 600, 'width-100 right-side-data-small' : scrWidth < 600}">
+      <mat-button mat-stroked-button (click)="adminLogin();" 
+                  class="admin-panel">{{captions.captionServiceList['AdminPanel']}}</mat-button>
+    </div>
+
+    <div *ngIf="isAuthenticated" [ngClass]="{'width-50 right-side-data-big': scrWidth >= 600, 'width-100 right-side-data-small' : scrWidth < 600}">
+
+      <mat-button mat-stroked-button (click)="createNewAdmin();" style="margin-right: 1em;"
+                  class="admin-panel">{{captions.captionServiceList['CreateNewProfile']}}</mat-button>
+
+      <mat-button mat-stroked-button (click)="adminLogOut();"
+                  class="admin-panel">{{captions.captionServiceList['LogOut']}}</mat-button>
+    </div>
+
+  </div>
+</section>

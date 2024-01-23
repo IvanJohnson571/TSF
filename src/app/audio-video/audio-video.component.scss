@@ -1,0 +1,75 @@
+section {
+  font-family: 'Azbuki-Regular' !important;
+
+  span {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.scale-down {
+  transform: scale(0.8);
+}
+
+.scale-up {
+  transform: scale(1.0);
+}
+
+.video-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .single-video {
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .name-wrapper {
+      padding-bottom: 0.5em;
+      width: 95%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.write-us-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+  margin-top: 2em;
+
+  .write-us {
+    font-family: 'Azbuki-Regular' !important;
+    font-size: 2.4rem;
+    font-weight: 900;
+  }
+}
+
+
+
+.elementor-507 {
+  //background-image: url('http://localhost:3000/images/icons/dot.png');
+  background-repeat: repeat;
+}
+
+.add-video-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.remove-video-icon {
+  cursor: pointer;
+  color: #f15d16;
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+}

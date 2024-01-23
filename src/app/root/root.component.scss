@@ -1,0 +1,135 @@
+body {
+  height: 100%;
+  font-family: monospace;
+
+  .mat-drawer-container {
+    display: unset !important;
+  }
+}
+
+#carouselExampleIndicators {
+  display: flex;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.carousel-control-prev {
+  padding-left: 8rem;
+}
+
+.carousel-control-next {
+  padding-right: 8rem;
+}
+
+.root-wrapper {
+  font-family: monospace;
+  height: 100%;
+  width: 100%;
+
+  ngx-gallery-image {
+    position: unset !important;
+  }
+}
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  z-index: 15;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+
+.gallery-wrapper {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.ngx-gallery {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.ngx-gallery-image-wrapper {
+  position: unset !important;
+}
+
+.mat-drawer-container {
+  display: unset !important;
+}
+
+.root-section {
+  left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 50px !important;
+  display: flex;
+  align-items: center;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.element {
+  text-align: center;
+  position: relative;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #eaeaeb;
+  padding: 50px 40px 50px 40px;
+  transition: all .4s ease;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 2rem;
+
+  &:hover {
+    background-color: #9fa5aa;
+  }
+}
+
+.width-25-mr-2 {
+  width: 25%;
+  margin-right: 2rem;
+}
+
+.img-class {
+  height: auto;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.desktop-row {
+  flex-direction: row;
+}
+
+.mobile-column {
+  flex-direction: column;
+}
+
+.flags-wrapper {
+  height: 40%;
+  margin-left: 1em;
+  padding-top: 1em;
+}

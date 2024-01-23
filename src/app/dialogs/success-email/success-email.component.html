@@ -1,0 +1,25 @@
+<section>
+  <div>
+    <div style="display: flex; justify-content: end;">
+      <button mat-stroked-button class="close-button" (click)="dialogRef.close()">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18" stroke="#222222" stroke-linecap="square" stroke-linejoin="round" />
+          <path d="M6 6L18 18" stroke="#222222" stroke-linecap="square" stroke-linejoin="round" />
+        </svg>
+        
+      </button>
+    </div>
+    <div style="padding-bottom: 30px;">
+      <div class="text">
+        <span>{{captions.captionServiceList['SendSuccessfully']}}.</span> 
+        <span>{{captions.captionServiceList['ThankYou']}}!</span> 
+      </div>
+      <div class="button-wrapper">
+        <button mat-stroked-button type="button" (click)="dialogRef.close()">
+          {{captions.captionServiceList['CloseLabel']}}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

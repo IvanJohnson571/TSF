@@ -1,0 +1,52 @@
+<div style="height: 80vh;">
+  <ngx-loading [show]="isLoading"
+               [config]="{ backdropBorderRadius: '0px' }"
+               [template]="template"></ngx-loading>
+  <mat-toolbar class="toolbar-primary"
+               [ngClass]="{'sticky': menuIsSticky, 'none-sticky' : !menuIsSticky}">
+    <mat-toolbar-row class="orange-line space-between">
+      <button mat-icon-button cdkFocusInitial (click)="sidenav.toggle()" *ngIf="scrWidth < 1000">
+        <mat-icon class="orange">menu</mat-icon>
+      </button>
+      <nav [tabPanel]="tabPanel" mat-tab-nav-bar [disableRipple]="true" *ngIf="scrWidth >= 1000"
+           class="nav">
+        <a mat-tab-link #anchorTag
+           *ngFor="let tab of menuItemsList"
+           [active]="activeLink == tab.Item"
+           [routerLink]="['./' + tab.Item]">
+          <span *ngIf="lang == 'BG'" class="orange tabs-style">{{tab.Description}}</span>
+          <span *ngIf="lang == 'EN'" class="orange tabs-style">{{tab.Item}}</span>
+        </a>
+      </nav>
+      <div *ngIf="isAuthenticated" class="user-wrapper">
+        <div class="user-name">{{userName}}</div>
+        <mat-icon style="color: #f15d16;">account_circle</mat-icon>
+      </div>
+      <span class="logo-right">
+        <a routerLink="/Main">
+          <img src='{{url + secondpath + "logo.png"}}' alt="logo" />
+        </a>
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill style="width: 100%; margin-right: auto; margin-left: auto;">
+    <mat-sidenav #sidenav style="height: fit-content;">
+      <mat-nav-list>
+        <ng-container *ngFor="let tab of menuItemsList">
+          <a *ngIf="lang == 'BG'" class="primary-font" [routerLink]="['./' + tab.Item]" (click)="sidenav.close()" mat-list-item>{{tab.Description}}</a>
+          <a *ngIf="lang == 'EN'" class="primary-font" [routerLink]="['./' + tab.Item]" (click)="sidenav.close()" mat-list-item>{{tab.Item}}</a>
+        </ng-container>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <main>
+        <mat-tab-nav-panel #tabPanel>
+          <router-outlet></router-outlet>
+        </mat-tab-nav-panel>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>

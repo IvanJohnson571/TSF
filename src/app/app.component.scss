@@ -1,0 +1,147 @@
+main {
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+  width: 100%;
+  position: relative;
+}
+
+agm-map {
+  height: 300px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: #231f20;
+  text-decoration: none;
+  opacity: 1 !important;
+
+  &:hover {
+
+    span {
+      color: #f15d16 !important;
+    }
+  }
+}
+
+mat-nav-list {
+
+  a {
+    font-family: "Azbuki-Regular";
+    font-weight: 600;
+  }
+}
+
+mat-sidenav {
+  background-color: black;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  background-color: white;
+}
+
+.menu-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(206, 212, 218);
+}
+
+.mat-mdc-tab-group.mat-primary .mat-ink-bar, .mat-mdc-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: black;
+}
+
+.anchor {
+  height: 48px;
+  opacity: .6;
+  min-width: 160px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: top;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:hover {
+  fill: red;
+}
+
+.sticky-table-header {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+.orange-line {
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-color: #f15d16;
+  border-style: solid;
+}
+
+.logo-right {
+  background-color: white;
+  border-radius: 55px;
+  transform: scale(0.9);
+
+  img {
+    display: flex;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.logo-right:hover {
+  background-color: black !important;
+}
+
+.sticky {
+  position: sticky !important;
+}
+
+.none-sticky {
+  position: static !important;
+}
+
+.toolbar-primary {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  z-index: 100;
+}
+
+.user-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  .user-name {
+    color: #f15d16;
+    font-family: 'Azbuki-Regular';
+    margin-right: 0.2em;
+    font-weight: 600;
+  }
+}

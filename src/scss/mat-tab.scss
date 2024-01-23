@@ -1,0 +1,11 @@
+.mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+    border-color: #F15D16;
+}
+
+.mdc-list-item__primary-text {
+    color: white !important;
+}
+
+.mdc-list-item__primary-text:hover {
+    color: #F15D16 !important;
+}

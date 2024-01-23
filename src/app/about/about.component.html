@@ -1,0 +1,117 @@
+<section *ngIf="!isLoading">
+  <div class="elementor-widget-wrap elementor-element-populated">
+    <div style="width: 100%; margin-bottom: 20px;">
+      <div class="hero">
+        <div class="hero--image"
+             style="background-image: url({{junoImage}});">
+          <div class="hero--copy">
+            <div style="display: flex; justify-content: center;">
+              <h1 class="all-begins">{{captions.captionServiceList['StartsHereLabel']}}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-wrapper">
+
+      <div class="elementor-widget-container center-paragraph">
+
+        <p *ngIf="!updateMode">{{aboutText}}</p>
+
+        <textarea *ngIf="updateMode"
+                  style="width: 90%;" [formControl]="about_Description">
+        </textarea>
+        <mat-hint *ngIf="isAuthenticated && updateMode" align="start"
+                  style="font-size: 12px; color: #CD5C5C !important; margin-top: 0.5em;">*{{captions.captionServiceList['ChangeTextWarning']}}</mat-hint>
+
+      </div>
+
+      <div *ngIf="isAuthenticated && !updateMode" class="flex-center">
+        <mat-button mat-stroked-button (click)="allowUpdate(aboutText)"
+                    class="panel-change">{{captions.captionServiceList['Change']}}</mat-button>
+      </div>
+
+      <div *ngIf="isAuthenticated && updateMode" class="update-wrap">
+        <div class="display-flex">
+          <mat-button mat-stroked-button (click)="updateMode = false"
+                      class="panel-gray">{{captions.captionServiceList['Reject']}}</mat-button>
+        </div>
+        <div class="display-flex" style="margin-left: 1em;">
+          <mat-button mat-stroked-button (click)="save();"
+                      class="panel-change">{{captions.captionServiceList['Save']}}</mat-button>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="width: 100%; margin: 1rem;">
+      <div class="elementor-507" style="background-image: url({{dotsImage}});">
+        <div style="--spacer-size: 100px; --widgets-spacing: 20px;">
+          <div style="height: 100px;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-wrapper"
+           [ngClass]="{'desktop-gallery': scrWidth >= 1200, 'mobile-gallery' : scrWidth < 1200}">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+    </div>
+
+    <div *ngIf="isAuthenticated" class="image-preview-wrapper">
+
+      <div *ngFor="let image of galleryImages" style="margin-right: 1em; margin-bottom: 1em; display: flex; ">
+
+        <img src="{{image.small}}" alt="Alternate Text" style="width: 8em; height: 8em;" />
+
+        <div style="position: relative; right: 25px;">
+          <mat-icon *ngIf="isAuthenticated"
+                    class="remove-image"
+                    matTooltip="{{captions.captionServiceList['DeletePhoto']}}"
+                    (click)="removeImage(image);">
+            cancel
+          </mat-icon>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div *ngIf="isAuthenticated" style="display: flex; flex-direction: column; align-items: center;">
+      <div>
+        <button mat-stroked-button type="button" (click)="filePicker.click()" class="submit-button"
+                style="font-family: 'Azbuki-Regular' !important; font-size: 20px; margin-left: 0.5em; margin-right: -13.5em;">
+          {{captions.captionServiceList['UploadNewPhoto']}}
+        </button>
+        <input type="file" #filePicker (change)="onImagePicked($event)">
+      </div>
+      <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+        <img [src]="imagePreview" [alt]="form.value.title">
+      </div>
+      <div>
+        <button *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid"
+                mat-raised-button
+                class="submit-button save-button"
+                (click)="onSaveImage();">
+          {{captions.captionServiceList['Add']}}
+        </button>
+        <button *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid"
+                mat-raised-button
+                class="submit-button save-button"
+                style="margin-left: 1em; background-color: lightgray !important"
+                (click)="cancel();">
+          {{captions.captionServiceList['Reject']}}
+        </button>
+      </div> 
+    </div>
+
+    <div style="width: 100%; margin: 1rem;">
+      <div class="elementor-507" style="background-image: url({{dotsImage}});">
+        <div style="--spacer-size: 100px; --widgets-spacing: 20px;">
+          <div style="height: 100px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

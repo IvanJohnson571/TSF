@@ -1,0 +1,36 @@
+<div>
+  <div style="width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 200px;
+    opacity: 0.9;">
+    <span>
+      <a routerLink="/">
+        <img src="{{logo}}" alt="logo" />
+      </a>
+    </span>
+  </div>
+      <mat-toolbar *ngIf="scrWidth < 1200" color="primary">
+        <header>
+          <mat-icon (click)="showMenu()">menu</mat-icon>
+          <nav>
+          </nav>
+        </header>
+      </mat-toolbar>
+  <mat-toolbar *ngIf="scrWidth >= 1200" style="height: 60px; display: flex;
+    justify-content: center;
+    background-color: transparent; width: 52rem;">
+    <nav mat-tab-nav-bar [disableRipple]="true"
+         [@.disabled]="true"
+         class="nav">
+      <a mat-tab-link #anchorTag
+         *ngFor="let tab of list"
+         [active]="activeLink == tab.Item"
+         [routerLink]="['./' + tab.Item]">
+        <span style="font-family: 'Azbuki-Regular'; font-weight: 900; font-size: 18px;">{{tab.Description}}</span>
+      </a>
+    </nav>
+  </mat-toolbar>
+</div>
+

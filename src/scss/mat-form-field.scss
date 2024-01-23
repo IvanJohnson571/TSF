@@ -1,0 +1,59 @@
+.mat-mdc-form-field-focus-overlay {
+  background-color: transparent !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+.ngx-intl-tel-input:active {
+  border: none !important;
+}
+
+.ngx-intl-tel-input {
+  //border: none !important;
+  padding-top: 24px !important;
+  padding-bottom: 8px !important;
+}
+
+.iti--allow-dropdown {
+  border: none !important;
+}
+
+.iti.separate-dial-code[_ngcontent-crw-c105] input[_ngcontent-crw-c105], .iti.separate-dial-code.iti--allow-dropdown.iti-sdc-2[_ngcontent-crw-c105] input[_ngcontent-crw-c105], .iti.separate-dial-code.iti--allow-dropdown.iti-sdc-3[_ngcontent-crw-c105] input[_ngcontent-crw-c105], .iti.separate-dial-code.iti--allow-dropdown.iti-sdc-4[_ngcontent-crw-c105] input[_ngcontent-crw-c105] {
+  border: none !important;
+}
+
+.mat-mdc-form-field-flex {
+  //height: 29px !important;
+}
+
+.mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+  padding-bottom: 2px !important;
+  height: 35px !important;
+  padding-top: 0px !important;
+}
+
+.mat-mdc-form-field-infix {
+  width: fit-content !important;
+}
+
+textarea {
+  border: none;
+  background-color: lightyellow;
+}
+
+textarea:active {
+  border: none !important;
+  background-color: lightyellow;
+}
+
+.mat-mdc-form-field-subscript-wrapper, .mat-mdc-form-field-bottom-align::before {
+  font-family: "Azbuki-Regular' !important";
+  margin-bottom: 0.5em;
+  color: #CD5C5C !important;
+}
+
+.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+  display: flex;
+}

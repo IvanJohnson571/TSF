@@ -1,0 +1,35 @@
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+    font-family: Azbuki-Regular !important;
+    font-size: 18px !important;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background-color: unset !important;
+    box-shadow: none !important;
+}
+
+.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+    color: white !important;
+}
+
+.snackbar-failure, .snackbar-success, .snackbar-warning {
+    color: white;
+    border-radius: 6px;
+
+    .mat-mdc-snack-bar-action {
+        color: white !important;
+
+    }
+
+    &.snackbar-failure {
+        background-color: #CD5C5C !important;
+    }
+
+    &.snackbar-success {
+        background-color: green !important;
+    }
+
+    &.snackbar-warning {
+        background-color: #f5a061;
+    }
+}
