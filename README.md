@@ -1,10 +1,13 @@
 # Tsf
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.13.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Run `npm i` to download all the nesessary packages.
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Run `npm run server` for a dev backend server. Navigate to `http://localhost:3000/`. The server will automatically reload if you change any of the source files.
+- Uncomment lines from `58th to 76th` in `app.js` for the `CORS` to be enabled for the backend.
 
 ## Code scaffolding
 
@@ -12,7 +15,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `backend/angular` directory, because we are hosting the site from the backend. Use the `--configuration production` flag for a production build.
 
 ## Running unit tests
 
