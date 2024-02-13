@@ -1,7 +1,7 @@
 
 export const environment = {
   production: false,
-  //mainUrl: "http://tsf-production-env.eba-mrewtf92.eu-north-1.elasticbeanstalk.com/",
+  //mainUrl: "https://tsf-studio.com/",
   mainUrl: "http://localhost:3000/",
   imagesSecondPath: "images/icons/",
   imagesGalleryPath: "images/Gallery/",

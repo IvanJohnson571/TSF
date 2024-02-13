@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  mainUrl: "http://tsf-production-env.eba-mrewtf92.eu-north-1.elasticbeanstalk.com/",
+  mainUrl: "https://tsf-studio.com/",
   //mainUrl: "http://localhost:3000/",
   imagesSecondPath: "images/icons/",
   imagesGalleryPath: "images/Gallery/",
@@ -15,5 +15,5 @@ export const environment = {
   agmCore: {
     apiKey: 'AIzaSyDBz308Mg2gEdzpPkCFevEAgOizE2mVY2M'
   },
-  apiUrl: "http://tsf-production-env.eba-mrewtf92.eu-north-1.elasticbeanstalk.com/"
+  apiUrl: "https://tsf-studio.com/"
 };
