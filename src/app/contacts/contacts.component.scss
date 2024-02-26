@@ -1,7 +1,6 @@
 .contacts {
   display: flex;
   flex-direction: column;
-
 }
 
 re-captcha {
@@ -27,6 +26,14 @@ re-captcha {
   text-decoration: underline;
 }
 
+.active-click:hover {
+  background-color: #9fa5aa;
+}
+
+.active-click:active {
+  background-color: #9fa5aa;
+}
+
 .ease-right {
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s, transform var(--e-transform-transition-duration, 0.4s);
 }
@@ -37,6 +44,18 @@ re-captcha {
 
 .animated {
   animation-duration: 1.25s;
+}
+
+.to-the-page {
+  color: #4D4D4D;
+  min-width: 118px;
+  padding-left: 4px;
+  border-radius: 4px;
+}
+
+.adjust-fb-icon {
+  position: relative;
+  top: 1px;
 }
 
 @keyframes fadeInLeft {
@@ -162,7 +181,6 @@ p, textarea {
 }
 
 .mobile-no-flex {
-
 }
 
 .width-90 {
@@ -171,6 +189,15 @@ p, textarea {
 
 .width-33 {
   width: 33.333%;
+}
+
+.width-25 {
+  width: 25%;
+}
+
+
+.clickable {
+  cursor: pointer;
 }
 
 .width-100 {
@@ -207,7 +234,7 @@ p, textarea {
   display: flex;
 }
 
-.elementor-widget-wrap> .elementor-element {
+.elementor-widget-wrap > .elementor-element {
   width: 100%
 }
 
@@ -278,9 +305,7 @@ input {
       border-bottom-color: #8e8f91;
       border-bottom-width: 1.5px;
       width: 100%;
-
     }
-
   }
 
   .iti--allow-dropdown {
@@ -290,7 +315,6 @@ input {
   #label {
     background-color: red;
   }
-
 }
 
 .scale {
@@ -299,14 +323,14 @@ input {
 
 .icon-wrapper-two {
   padding-top: 15px;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-bottom: 7px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 7px;
 }
 
 .map {
   google-map {
-    .map-container{
+    .map-container {
       width: 800px;
       height: 600px;
     }

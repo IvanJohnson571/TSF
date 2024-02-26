@@ -238,7 +238,7 @@ export class ContactsComponent implements OnInit, AfterViewInit, OnDestroy {
 
       let params = {
         name: this.formGroup.controls['name'].value,
-        phone: this.formGroup.controls['phone'].value.internationalNumber,
+        phone: this.formGroup.controls['phone'].value,
         email: this.formGroup.controls['email'].value,
         subject: this.formGroup.controls['subject'].value,
         message: this.formGroup.controls['message'].value,
@@ -413,6 +413,12 @@ export class ContactsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.queryFormControl.setValue(text);
     this.latitude_form.setValue(this.contactsData.mapData["lat"]);
     this.longitude_form.setValue(this.contactsData.mapData["lng"]);
+
+  }
+
+  goToFB() {
+
+    window.open('https://www.facebook.com/profile.php?id=100066747517811', '_blank');
 
   }
 

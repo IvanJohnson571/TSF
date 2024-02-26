@@ -64,7 +64,7 @@
                 </div>
               </div>
             </div>
-            <div [ngClass]="{'width-33': scrWidth >= 1200, 'width-100' : scrWidth < 1200}"
+            <div [ngClass]="{'width-25': scrWidth >= 1200, 'width-100' : scrWidth < 1200}"
                  class="elementor-column">
               <div class="elementor-widget-wrap elementor-element-populated">
                 <div style="--icon-box-icon-margin: 23px; width: 100%;">
@@ -81,28 +81,28 @@
                         </h3>
                         <p *ngIf="!updatePhone" style="color: #4D4D4D;">{{contactPhone}}</p>
                         <mat-form-field *ngIf="updatePhone"
-                        style="width: 100%;">
-                        <input matInput
-                        [formControl]="phone_data">
+                                        style="width: 100%;">
+                          <input matInput
+                                 [formControl]="phone_data">
                         </mat-form-field>
                       </div>
                     </div>
 
                     <div *ngIf="isAuthenticated && !updatePhone" class="panel-change-wrapper">
-                      <mat-button mat-stroked-button (click)="changePhone(contactPhone);" 
+                      <mat-button mat-stroked-button (click)="changePhone(contactPhone);"
                                   class="panel-change">{{captions.captionServiceList['Change']}}</mat-button>
                     </div>
 
                     <div *ngIf="isAuthenticated && updatePhone"
-                      style="display: flex; flex-direction: row;">
+                         style="display: flex; flex-direction: row;">
 
                       <div class="display-flex">
-                        <mat-button mat-stroked-button (click)="closeUpdatePhone();" 
+                        <mat-button mat-stroked-button (click)="closeUpdatePhone();"
                                     class="panel-gray">{{captions.captionServiceList['Reject']}}</mat-button>
                       </div>
-  
+
                       <div class="display-flex" style="margin-left: 1em;">
-                        <mat-button mat-stroked-button (click)="save(captions.captionServiceList['Telephone']);" 
+                        <mat-button mat-stroked-button (click)="save(captions.captionServiceList['Telephone']);"
                                     class="panel-change">{{captions.captionServiceList['Save']}}</mat-button>
                       </div>
 
@@ -112,14 +112,14 @@
                 </div>
               </div>
             </div>
-            <div [ngClass]="{'width-33': scrWidth >= 1200, 'width-100' : scrWidth < 1200}"
+            <div [ngClass]="{'width-25': scrWidth >= 1200, 'width-100' : scrWidth < 1200}"
                  class="elementor-column">
               <div class="elementor-widget-wrap elementor-element-populated">
                 <div style="--icon-box-icon-margin: 23px; width: 100%;">
                   <div class="elementor-widget-container">
                     <div class="elementor-icon-box-wrapper" style="display: flex;">
                       <div class="elementor-icon-box-icon" style="display: inline-flex; flex: 0 0 auto;">
-                        <span class="icon-wrapper" 
+                        <span class="icon-wrapper"
                               style="height: 58px;">
                           <mat-icon class="scale">mail</mat-icon>
                         </span>
@@ -130,27 +130,27 @@
                         </h3>
                         <p *ngIf="!updateMail" style="color: #4D4D4D;">{{mailContact}}</p>
                         <mat-form-field *ngIf="updateMail"
-                        style="width: 100%;">
-                        <input matInput
-                        [formControl]="mail_data">
+                                        style="width: 100%;">
+                          <input matInput
+                                 [formControl]="mail_data">
                         </mat-form-field>
                       </div>
                     </div>
                     <div *ngIf="isAuthenticated && !updateMail" class="panel-change-wrapper">
-                      <mat-button mat-stroked-button (click)="changeEmail(mailContact);" 
+                      <mat-button mat-stroked-button (click)="changeEmail(mailContact);"
                                   class="panel-change">{{captions.captionServiceList['Change']}}</mat-button>
                     </div>
 
                     <div *ngIf="isAuthenticated && updateMail"
-                      style="display: flex; flex-direction: row;">
+                         style="display: flex; flex-direction: row;">
 
                       <div class="display-flex">
-                        <mat-button mat-stroked-button (click)="closeUpdateMail();" 
+                        <mat-button mat-stroked-button (click)="closeUpdateMail();"
                                     class="panel-gray">{{captions.captionServiceList['Reject']}}</mat-button>
                       </div>
-  
+
                       <div class="display-flex" style="margin-left: 1em;">
-                        <mat-button mat-stroked-button (click)="save(captions.captionServiceList['Email']);" 
+                        <mat-button mat-stroked-button (click)="save(captions.captionServiceList['Email']);"
                                     class="panel-change">{{captions.captionServiceList['Save']}}</mat-button>
                       </div>
 
@@ -160,6 +160,39 @@
                 </div>
               </div>
             </div>
+
+            <div [ngClass]="{'width-25': scrWidth >= 1200, 'width-100' : scrWidth < 1200}"
+                 class="elementor-column clickable" (click)="goToFB()">
+              <div class="elementor-widget-wrap elementor-element-populated">
+                <div style="--icon-box-icon-margin: 23px; width: 100%;">
+                  <div class="elementor-widget-container">
+                    <div class="elementor-icon-box-wrapper" style="display: flex;">
+                      <div class="elementor-icon-box-icon" style="display: inline-flex; flex: 0 0 auto;">
+                        <span class="icon-wrapper"
+                              style="height: 58px; height: 58px; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+                          <svg class="adjust-fb-icon" xmlns="http://www.w3.org/2000/svg" fill="white" top="1px" position="relative" width="35px" height="35px" viewBox="0 0 24 24">
+                            <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z" />
+                          </svg>
+                        </span>
+                      </div>
+                      <div class="elementor-icon-box-content">
+                        <h3 class="elementor-icon-box-title">
+                          <span>Facebook</span>
+                        </h3>
+                        <div style="display: flex; flex-direction: row">
+                          <mat-icon class="material-symbols-outlined">
+                            location_searching
+                          </mat-icon>
+                          <p class="to-the-page active-click">към страницата</p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </section>
       </div>
@@ -198,6 +231,9 @@
           </div>
         </div>
       </div>
+
+
+
     </div>
     <div [ngClass]="{'width-50': scrWidth >= 1200, 'width-100' : scrWidth < 1200}" class="google_map_container">
       <google-map height="350px" width="100%" [zoom]="mapZoom" [center]="mapOptions.center" [options]="mapOptions">
