@@ -385,7 +385,6 @@ function sendEmail(query) {
 
       if (error) {
         //return reject({ message: 'An error has occured!' });
-        console.log("error: ", error);
         return reject({ message: error });
 
       }

@@ -73,6 +73,7 @@ const EN_Captions = {
   PasswordDoesntMatch: "Password does not match",
   ChangesSuccessfully: "The changes have been made successfully.",
   LoginOK: "You have successfully logged into your account.",
+  ToThePage: "to the page",
 };
 
 module.exports = EN_Captions;

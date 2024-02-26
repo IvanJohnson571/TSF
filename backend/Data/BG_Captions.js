@@ -73,6 +73,7 @@ const BG_Captions = {
   PasswordDoesntMatch: "Паролата не съвпада",
   ChangesSuccessfully: "Промените са направени успешно.",
   LoginOK: "Успешно влезнахте в профила си.",
+  ToThePage: "към страницата",
 }
 
 module.exports = BG_Captions;
