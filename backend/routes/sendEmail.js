@@ -1,12 +1,14 @@
 const express = require("express");
 const nodemailer = require('nodemailer');
 const router = express.Router();
+var url = require('url');
 //const userGMail = 'ivanjohnson58@gmail.com';
-const userGMail = 'ivan_johnson2005@yahoo.com';
+const myMail = 'ivan_johnson2005@yahoo.com';
 //const pass = 'cgju jqyq zlbe pluc'; //NOTE: google account - old
 //const pass = 'rgyu miew meab jfni'; //NOTE: google account.
 //const pass = 'zzmwvotllrzqlbnq'; //NOTE: yahoo account. //https://tsf-bg.com
 const pass = 'kqujzpqvhxiwddpr'; //NOTE: yahoo account. //test
+mailTrapAccessEmail = "info@tsf-bg.com";
 
 var endOfTextData = '';
 
@@ -36,7 +38,7 @@ function sendEmail(query) {
       //service: 'yahoo',
       //secure: true,
       //auth: {
-      //  user: userGMail,
+      //  user: myMail,
       //  pass: pass
       //},
       //tls: { rejectUnauthorized: false },
@@ -373,8 +375,8 @@ function sendEmail(query) {
     //</html>`;
 
     var mailOptions = {
-      from: query.email,
-      to: userGMail,
+      from: mailTrapAccessEmail, //query.email,
+      to: myMail,
       subject: query.subject,
       text: query.message + endOfTextData,
       generateTextFromHTML: true,
@@ -384,8 +386,8 @@ function sendEmail(query) {
     transporter.sendMail(mailOptions, function (error, info) {
 
       if (error) {
-        //return reject({ message: 'An error has occured!' });
-        return reject({ message: error });
+        return reject({ message: 'An error has occured!' });
+        //return reject({ message: error });
 
       }
 
