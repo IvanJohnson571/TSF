@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit, HostListener, ViewChild, ElementRef, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { SearchCountryField, CountryISO } from "ngx-intl-tel-input";
 import { MatDialog } from '@angular/material/dialog';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { ReCaptcha2Component } from 'ngx-captcha';
@@ -30,9 +29,6 @@ export class ContactsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('captchaElem') captchaElem: ReCaptcha2Component;
   @ViewChild('langInput') langInput: ElementRef;
-  SearchCountryField = SearchCountryField;
-  CountryISO = CountryISO;
-  preferredCountries: CountryISO[] = [CountryISO.Bulgaria];
   public captchaIsLoaded = false;
   public captchaSuccess = false;
   public captchaIsExpired = false;

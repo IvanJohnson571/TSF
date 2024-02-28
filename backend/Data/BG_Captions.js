@@ -3,7 +3,7 @@ const BG_Captions = {
   AboutUs: "За Нас",
   Contacts: "Контакти",
   Halls: "Зали",
-  OurServices: "Нашите услуси",
+  OurServices: "Нашите услуги",
   HallOne: "Първа зала",
   HallTwo: "Втора зала",
   FollowUs: "Последвайте ни",

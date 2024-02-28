@@ -61,7 +61,8 @@ export class AudioVideoComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     this.windowWidth = window.innerWidth;
-    this.getAudioData();
+    //this.getAudioData();
+    this.getVideoList();
 
     if (this.windowWidth <= this.width) {
       this.width = window.innerWidth;

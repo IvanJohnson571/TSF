@@ -62,7 +62,6 @@
     "ng-recaptcha": "^10.0.0",
     "ngx-bootstrap": "^11.0.2",
     "ngx-captcha": "^6.2.0",
-    "ngx-intl-tel-input": "^2.6.0",
     "ngx-loader": "^1.0.0",
     "ngx-loading": "^15.0.0",
     "ngx-mat-intl-tel-input": "^5.0.0",

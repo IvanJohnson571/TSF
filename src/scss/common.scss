@@ -1,44 +1,50 @@
 .mdc-list-item__primary-text {
-    font-weight: 900 !important;
-    font-size: 20px !important;
-    font-family: Azbuki-Regular !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  font-family: Azbuki-Regular !important;
 }
 
 .mat-toolbar-row, .mat-toolbar-single-row {
-    height: unset !important;
+  height: unset !important;
 }
 
 .orange {
-    color: #F15D16;
+  color: #F15D16;
 }
 
 .space-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .tabs-style {
-    font-family: Azbuki-Regular; 
-    font-weight: 900; 
-    font-size: 20px;
+  font-family: Azbuki-Regular;
+  font-weight: 900;
+  font-size: 20px;
 }
 
 .primary-font {
-    font-family: Azbuki-Regular;
+  font-family: Azbuki-Regular;
 }
 
 mat-sidenav-content {
-    background-color: #f5f7fa; 
-    overflow: hidden !important;
+  background-color: #f5f7fa;
+  overflow: hidden !important;
 }
 
 .width-100 {
-    width: 100%;
-  }
-  
-  .width-50 {
-    width: 50% !important;
-  }
+  width: 100%;
+}
+
+.width-50 {
+  width: 50% !important;
+}
 
 .display-flex {
-    display: flex;
+  display: flex;
+}
+
+.mat-mdc-list-base {
+  display: block;
+  z-index: 100 !important;
+  position: relative !important;
 }
