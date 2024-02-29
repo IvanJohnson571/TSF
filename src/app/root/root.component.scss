@@ -133,3 +133,43 @@ body {
   margin-left: 1em;
   padding-top: 1em;
 }
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%,0,0)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+.animated {
+  animation-duration: 1.25s;
+}
+
+.title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 800;
+  padding-left: 15px;
+  font-family: 'Azbuki-Regular';
+  height: 60%;
+}
+
+.our-services {
+  color: #950e1c;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}

@@ -2,21 +2,21 @@
 style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.94)), transparent url({{urlMic}}) center center/cover no-repeat scroll;">
   <div style="height: 100%;">
     <div class="flags-wrapper">
-      <span (click)="switchLanguages('BG');" style="cursor: pointer;">
+      <span (click)="switchLanguages('BG');" class="pointer">
         <img style="width: 22px; height: 22px;"
         src='{{bgFlag}}' alt="logo" />
       </span>
-      <span (click)="switchLanguages('EN');" style="margin-left: 7px; cursor: pointer;">
+      <span (click)="switchLanguages('EN');" class="pointer ml-7">
         <img style="width: 22px; height: 22px;"
         src='{{enFlag}}' alt="logo" />
       </span>
     </div>
-    <div style="color: white; font-size: 2.5rem; font-weight: 800; padding-left: 15px; font-family: 'Azbuki-Regular'; height: 60%;">Tobacco Sound Factory</div>
+    <div class="fadeInRight animated title">Tobacco Sound Factory</div>
   </div>
 </section>
 <section *ngIf="!isLoading">
-  <div style="display: flex; justify-content: center;">
-    <h2 style="color: #950e1c; font-weight: 900; margin-bottom: 2rem;">{{captions.captionServiceList['OurServices']}}</h2>
+  <div class="flex-center">
+    <h2 class="our-services">{{captions.captionServiceList['OurServices']}}</h2>
   </div>
   <div class="section-wrapper"
        [ngClass]="{'desktop-row': scrWidth >= 1200, 'mobile-column' : scrWidth < 1200}">
